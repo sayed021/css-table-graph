@@ -1,0 +1,622 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+    <div class="row mapinfo-area">
+      
+      <div class="info-table-wrap">
+
+        <table class="info-table-area">
+          <thead>
+            <tr class="table-row">
+              <th class="t-col left-filter">
+                <div class="h-100"></div>
+              </th>
+              <th class="t-col"><div class="d-flex h-100 align-items-end position-relative">pop 5.0</div></th>
+              <th class="t-col"><div class="d-flex h-100 align-items-end position-relative">pop 5.0</div></th>
+              <th class="t-col"><div class="d-flex h-100 align-items-end position-relative">pop 5.0 <span class="month-title">iix 7</span></div></th>
+              <th class="t-col"><div class="d-flex h-100 align-items-end position-relative">pop 5.0</div></th>
+              <th class="t-col"><div class="d-flex h-100 align-items-end position-relative">pop 5.0</div></th>
+              <th class="t-col"><div class="d-flex h-100 align-items-end position-relative">pop 5.0</div></th>
+              <th class="t-col"><div class="d-flex h-100 align-items-end position-relative">pop 5.0</div></th>
+              <th class="t-col"><div class="d-flex h-100 align-items-end position-relative">pop 5.0</div></th>
+              <th class="t-col"><div class="d-flex h-100 align-items-end position-relative">pop 5.0</div></th>
+              <th class="t-col"><div class="d-flex h-100 align-items-end position-relative">pop 5.0<span class="month-title center">iix 7</span></div></th>
+              <!-- the title 'iix 7' center when boundary dates count odd number you can just add a class 'center' with 'month-title',  -->
+              <th class="t-col"><div class="d-flex h-100 align-items-end position-relative">pop 5.0</div></th>
+              <th class="t-col"><div class="d-flex h-100 align-items-end position-relative">pop 5.0</div></th>
+              <th class="t-col"><div class="d-flex h-100 align-items-end position-relative">pop 5.0</div></th>
+              <th class="t-col"><div class="d-flex h-100 align-items-end position-relative">pop 5.0</div></th>
+              <th class="t-col"><div class="d-flex h-100 align-items-end position-relative">pop 5.1</div></th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr [class.open]="isOpen">
+              <td class="t-col">
+                <div class="first-column">
+                  <div class="d-flex align-items-center">
+                    <span (click)="isCollapse()" class="collapse-arrow"><img src="/assets/images/logistiq/collapsed.png" alt="" width="10" height="22"></span>
+                    <strong>item 1</strong>
+                  </div>
+                  <div class="d-flex pl2">
+                    <span class="icon rotateY"><img src="/assets/images/logistiq/item-green.png" alt="" width="50" height="30"></span>
+                  </div>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col current-date">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                  <span class="data-bar" style="width: 260px"></span>
+                  <!-- the with increase still 130*numberOfDayes, exam: 130*1 = 130px or run progress one by one  -->
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                  <span class="data-bar" style="width: 520px"></span>
+                </div>
+              </td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+            </tr>
+            
+            <!-- ##start row collapse  -->
+            <tr class="row-collapsable" *ngIf="isOpen"> 
+              <td class="t-col">
+                <div class="first-column">
+                  <div class="info-row">
+                    <div class="info-outer">
+                      <span class="info-row-title">MMSI</span>
+                      <span class="info-row-cnt">236064784</span>
+                    </div>
+                  </div>
+                  <div class="info-row">
+                    <div class="info-outer">
+                      <span class="info-row-title">Callsign</span>
+                      <span class="info-row-cnt">2BBX5</span>
+                    </div>
+                  </div>
+                  <div class="info-row">
+                    <div class="info-outer">
+                      <span class="info-row-title">Total Capacity</span>
+                      <span class="info-row-cnt">pop...</span>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col current-date"></td>
+              <td class="t-col"></td>
+              <td class="t-col">
+                <ul class="containers">
+                  <li>Container 1</li>
+                  <li>Container 2</li>
+                  <li>Container 3</li>
+                  <li>Container 4</li>
+                </ul>
+              </td>
+              <td class="t-col">
+                <ul class="containers">
+                  <li>Container 5</li>
+                  <li>Container 6</li>
+                  <li>Container 7</li>
+                  <li>Container 8</li>
+                  <li>Container 9</li>
+                </ul>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+            </tr>
+            <!-- ##end row collapse  -->
+
+            <tr>
+              <td class="t-col">
+                <div class="first-column">
+                   <div class="d-flex align-items-center">
+                    <span class="collapse-arrow"><img src="/assets/images/logistiq/collapsed.png" alt="" width="10" height="22"></span>
+                    <strong>item 2</strong>
+                  </div>
+                  <div class="d-flex pl2">
+                    <span class="icon rotateY"><img src="/assets/images/logistiq/item-green.png" alt="" width="50" height="30"></span>
+                  </div>
+                </div>
+              </td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                  <span class="data-bar" style="width: 260px"></span>
+                </div>          
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                </div>
+              </td>
+              <td class="t-col current-date"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+            </tr>
+            <tr>
+              <td class="t-col">
+                <div class="first-column">
+                   <div class="d-flex align-items-center">
+                    <span class="collapse-arrow"><img src="/assets/images/logistiq/collapsed.png" alt="" width="10" height="22"></span>
+                    <strong>item 3</strong>
+                  </div>
+                  <div class="d-flex pl2">
+                    <span class="icon rotateY"><img src="/assets/images/logistiq/item-green.png" alt="" width="50" height="30"></span>
+                  </div>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                  <span class="data-bar" style="width: 260px"></span>
+                </div>
+              </td>
+              <td class="t-col current-date"></td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                  <span class="data-bar" style="width: 390px"></span>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+            </tr>
+            <tr>
+              <td class="t-col">
+                <div class="first-column">
+                   <div class="d-flex align-items-center">
+                    <span class="collapse-arrow"><img src="/assets/images/logistiq/collapsed.png" alt="" width="10" height="22"></span>
+                    <strong>item 4</strong>
+                  </div>
+                  <div class="d-flex pl2">
+                    <span class="icon rotateY"><img src="/assets/images/logistiq/item-green.png" alt="" width="50" height="30"></span>
+                  </div>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                  <span class="data-bar" style="width: 130px"></span>
+                </div>
+              </td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="data-bar" style="width: 130px"></span>
+                </div>
+              </td>
+              <td class="t-col current-date">
+                <div class="info-outer">
+                  <span class="data-bar" style="width: 130px"></span>
+                </div>
+              </td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="data-bar" style="width: 130px"></span>
+                </div>
+              </td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="data-bar" style="width: 130px"></span>
+                </div>
+              </td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">stop</span>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+            </tr>
+            <tr>
+              <td class="t-col">
+                <div class="first-column">
+                   <div class="d-flex align-items-center">
+                    <span class="collapse-arrow"><img src="/assets/images/logistiq/collapsed.png" alt="" width="10" height="22"></span>
+                    <strong>item 5</strong>
+                  </div>
+                  <div class="d-flex pl2">
+                    <span class="icon rotateY"><img src="/assets/images/logistiq/item-green.png" alt="" width="50" height="30"></span>
+                  </div>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col current-date"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+            </tr>
+            <tr>
+              <td class="t-col">
+                <div class="first-column">
+                   <div class="d-flex align-items-center">
+                    <span class="collapse-arrow"><img src="/assets/images/logistiq/collapsed.png" alt="" width="10" height="22"></span>
+                    <strong>item 6</strong>
+                  </div>
+                  <div class="d-flex pl2">
+                    <span class="icon rotateY"><img src="/assets/images/logistiq/item-green.png" alt="" width="50" height="30"></span>
+                  </div>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col current-date"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+            </tr>
+            <tr>
+              <td class="t-col">
+                <div class="first-column">
+                   <div class="d-flex align-items-center">
+                    <span class="collapse-arrow"><img src="/assets/images/logistiq/collapsed.png" alt="" width="10" height="22"></span>
+                    <strong>item 6</strong>
+                  </div>
+                  <div class="d-flex pl2">
+                    <span class="icon rotateY"><img src="/assets/images/logistiq/item-green.png" alt="" width="50" height="30"></span>
+                  </div>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col current-date"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                  <span class="data-bar" style="width: 260px"></span>
+                  <!-- the with increase still 130*numberOfDayes, exam: 130*1 = 130px -->
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                  <span class="data-bar" style="width: 520px"></span>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                </div>
+              </td>
+              <td class="t-col"></td>
+            </tr>
+            <tr>
+              <td class="t-col">
+                <div class="first-column">
+                   <div class="d-flex align-items-center">
+                    <span class="collapse-arrow"><img src="/assets/images/logistiq/collapsed.png" alt="" width="10" height="22"></span>
+                    <strong>item 7</strong>
+                  </div>
+                  <div class="d-flex pl2">
+                    <span class="icon rotateY"><img src="/assets/images/logistiq/item-green.png" alt="" width="50" height="30"></span>
+                  </div>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col current-date"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+            </tr>
+            <tr>
+              <td class="t-col">
+                <div class="first-column">
+                   <div class="d-flex align-items-center">
+                    <span class="collapse-arrow"><img src="/assets/images/logistiq/collapsed.png" alt="" width="10" height="22"></span>
+                    <strong>item 8</strong>
+                  </div>
+                  <div class="d-flex pl2">
+                    <span class="icon rotateY"><img src="/assets/images/logistiq/item-green.png" alt="" width="50" height="30"></span>
+                  </div>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col current-date"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+            </tr>
+            
+            <tr>
+              <td class="t-col">
+                <div class="first-column">
+                   <div class="d-flex align-items-center">
+                    <span class="collapse-arrow"><img src="/assets/images/logistiq/collapsed.png" alt="" width="10" height="22"></span>
+                    <strong>item 9</strong>
+                  </div>
+                  <div class="d-flex pl2">
+                    <span class="icon rotateY"><img src="/assets/images/logistiq/item-green.png" alt="" width="50" height="30"></span>
+                  </div>
+                </div>
+              </td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                  <span class="data-bar" style="width: 260px"></span>                  
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                </div>
+              </td>
+              <td class="t-col current-date"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+            </tr>
+            <tr>
+              <td class="t-col">
+                <div class="first-column">
+                   <div class="d-flex align-items-center">
+                    <span class="collapse-arrow"><img src="/assets/images/logistiq/collapsed.png" alt="" width="10" height="22"></span>
+                    <strong>item 10</strong>
+                  </div>
+                  <div class="d-flex pl2">
+                    <span class="icon rotateY"><img src="/assets/images/logistiq/item-green.png" alt="" width="50" height="30"></span>
+                  </div>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                  <span class="data-bar" style="width: 260px"></span>
+                </div>
+              </td>
+              <td class="t-col current-date"></td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                  <span class="data-bar" style="width: 390px"></span>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+            </tr>
+            <tr>
+              <td class="t-col">
+                <div class="first-column">
+                  <div class="d-flex align-items-center">
+                    <span class="collapse-arrow"><img src="/assets/images/logistiq/collapsed.png" alt="" width="10" height="22"></span>
+                    <strong>item 11</strong>
+                  </div>
+                  <div class="d-flex pl2">
+                    <span class="icon rotateY"><img src="/assets/images/logistiq/item-green.png" alt="" width="50" height="30"></span>
+                  </div>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col current-date"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+            </tr>
+            <tr>
+              <td class="t-col">
+                <div class="first-column">
+                   <div class="d-flex align-items-center">
+                    <span class="collapse-arrow"><img src="/assets/images/logistiq/collapsed.png" alt="" width="10" height="22"></span>
+                    <strong>item 12</strong>
+                  </div>
+                  <div class="d-flex pl2">
+                    <span class="icon rotateY"><img src="/assets/images/logistiq/item-green.png" alt="" width="50" height="30"></span>
+                  </div>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col current-date"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+            </tr>
+            <tr>
+              <td class="t-col">
+                <div class="first-column">
+                   <div class="d-flex align-items-center">
+                    <span class="collapse-arrow"><img src="/assets/images/logistiq/collapsed.png" alt="" width="10" height="22"></span>
+                    <strong>item 13</strong>
+                  </div>
+                  <div class="d-flex pl2">
+                    <span class="icon rotateY"><img src="/assets/images/logistiq/item-green.png" alt="" width="50" height="30"></span>
+                  </div>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col current-date"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                  <span class="data-bar" style="width: 260px"></span>
+                  <!-- the with increase still 130*numberOfDayes, exam: 130*1 = 130px -->
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                  <span class="data-bar" style="width: 520px"></span>
+                </div>
+              </td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col"></td>
+              <td class="t-col">
+                <div class="info-outer">
+                  <span class="label">label</span>
+                </div>
+              </td>
+              <td class="t-col"></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-block w-100 clearfix clear" style="height: 30px;"></div> <!-- extra space -->
+      </div>
+    </div>
+
+  
+</body>
+</html>
+
